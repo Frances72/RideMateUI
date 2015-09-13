@@ -188,11 +188,11 @@
         <ListView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:id="@+id/listView"
+            android:id="@+id/listAllCyclist"
             android:layout_weight="1"
             android:layout_gravity="top"
             android:fastScrollEnabled="false" />
     </LinearLayout>
 
-
+    <!-- Icons from: https://icons8.com/web-app/category/android/Very-Basic -->
 </LinearLayout>

@@ -207,11 +207,11 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="SUBMIT"
-            android:id="@+id/buttonSubmit"
+            android:id="@+id/buttonSubmit1"
             android:background="#ff5272"
             android:enabled="true" />
 
     </LinearLayout>
 
-
+    <!-- Icons from: https://icons8.com/web-app/category/android/Very-Basic -->
 </LinearLayout>
