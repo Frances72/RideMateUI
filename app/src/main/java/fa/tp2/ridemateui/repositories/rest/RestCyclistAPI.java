@@ -16,7 +16,7 @@ import fa.tp2.ridemateui.repositories.RestAPI;
  * Created by User on 2015/09/12.
  */
 public class RestCyclistAPI implements RestAPI<Cyclist, Long> {
-    //final String BASE_URL = "http//localhost:8080/api/";
+    final String BASE_URL = "http//localhost:8080/api/";
 
     final HttpHeaders requestHeaders = RestMethods.getHeaders();
     final RestTemplate restTemplate = RestMethods.getRestTemplate();

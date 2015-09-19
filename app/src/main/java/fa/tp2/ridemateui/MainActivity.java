@@ -1,16 +1,31 @@
 package fa.tp2.ridemateui;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import fa.tp2.ridemateui.model.Cyclist;
+import fa.tp2.ridemateui.repositories.rest.RestCyclistAPI;
+import fa.tp2.ridemateui.views.Adapters.CyclistAdapter;
 
 public class MainActivity extends AppCompatActivity {
+
+    private RestCyclistAPI restSubjectAPI = new RestCyclistAPI();
+    List<Cyclist> subjectList = new ArrayList<Cyclist>();
+    ListView subjectsList;
+    CyclistAdapter adapter ;
+    Cyclist[] cyclistl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
     }
 
     @Override

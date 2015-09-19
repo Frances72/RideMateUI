@@ -4,8 +4,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -47,30 +45,28 @@ public class AddNewCyclistActivity extends AppCompatActivity {
         buttonSubmit1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("Submit button hit on AddNewCyclist");
+                System.out.println("Submit button hit on AddNewCyclist");//test
 
                 String firstname = editName.getText() + "";
                 String lastname = editSurname.getText() + "";
                 String age = editAge.getText() + "";
 
-                System.out.println("Name:" + firstname);
-                System.out.println("Surname:" + lastname);
-                System.out.println("Age:" + age);
+                System.out.println("Name:" + firstname);//test
+                System.out.println("Surname:" + lastname);//test
+                System.out.println("Age:" + age);//test
 
 
                 if (firstname.length() == 0 || lastname.length() == 0 || age.length() == 0) {
                     Toast.makeText(c, "Please fill in name, surname and age", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                )}
 
+           }
 
-
-
-
-
+  });
     }
-public class Networking extends AsyncTask{
+
+ public class Networking extends AsyncTask{
   @Override
     protected Object doInBackground(Object[] params){
       System.out.println("Do in background has been called");
@@ -81,14 +77,8 @@ private void getJson(String url,String state ){
     {
         return;
     }
-
-
-
-
-}
-
-
     }
+}
 }
 
 
