@@ -1,9 +1,9 @@
 package fa.tp2.ridemateui.views;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -15,7 +15,7 @@ import fa.tp2.ridemateui.R;
 /**
  * Created by User on 2015/09/12.
  */
-public class AddNewCyclistActivity extends AppCompatActivity {
+public class AddNewCyclistActivity extends Activity {
 
     EditText editName;
     EditText editSurname;
@@ -50,7 +50,7 @@ public class AddNewCyclistActivity extends AppCompatActivity {
                 String firstname = editName.getText() + "";
                 String lastname = editSurname.getText() + "";
                 String age = editAge.getText() + "";
-
+//tests
                 System.out.println("Name:" + firstname);//test
                 System.out.println("Surname:" + lastname);//test
                 System.out.println("Age:" + age);//test

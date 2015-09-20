@@ -26,10 +26,6 @@
             android:label="@string/title_deletecyclist" >
         </activity>
         <activity
-            android:name=".views.SubmitUpdateActivity"
-            android:label="@string/title_submit_update" >
-        </activity>
-        <activity
             android:name=".views.UpdateCyclistActivity"
             android:label="@string/title_updatecyclist" >
         </activity>

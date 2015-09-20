@@ -1,8 +1,8 @@
 package fa.tp2.ridemateui.views;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,12 +13,12 @@ import fa.tp2.ridemateui.R;
 /**
  * Created by User on 2015/09/12.
  */
-public class DeleteCyclistActivity extends AppCompatActivity {
+public class DeleteCyclistActivity extends Activity {
 
     EditText editName;
     EditText editSurname;
     EditText editAge;
-    Button buttonSubmit2;
+    Button btnDelete;
     Context c;
 
     @Override
@@ -36,22 +36,22 @@ public class DeleteCyclistActivity extends AppCompatActivity {
         editName        = (EditText) findViewById(R.id.editName);
         editSurname     = (EditText) findViewById(R.id.editSurname);
         editAge         = (EditText) findViewById(R.id.editAge);
-        buttonSubmit2   = (Button) findViewById(R.id.buttonSubmit2);
+        btnDelete  = (Button) findViewById(R.id.btnDelete);
 
-        buttonSubmit2.setOnClickListener(new View.OnClickListener() {
+        btnDelete.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
             public void onClick(View v) {
-                System.out.println("Submit button hit on DeleteCyclist");
+                System.out.println("Submit button hit on DeleteCyclist");//test
 
                 String firstname = editName.getText() + "";
                 String lastname = editSurname.getText() + "";
                 String age = editAge.getText() + "";
 
-                System.out.println("Name:" + firstname);
-                System.out.println("Surname:" + lastname);
-                System.out.println("Age:" + age);
+                System.out.println("Name:" + firstname);//test
+                System.out.println("Surname:" + lastname);//test
+                System.out.println("Age:" + age);//test
 
 
                 if (firstname.length() == 0 || lastname.length() == 0 || age.length() == 0) {

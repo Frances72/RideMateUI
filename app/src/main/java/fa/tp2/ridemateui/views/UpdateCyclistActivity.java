@@ -1,7 +1,7 @@
 package fa.tp2.ridemateui.views;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -10,7 +10,7 @@ import fa.tp2.ridemateui.R;
 /**
  * Created by User on 2015/09/12.
  */
-public class UpdateCyclistActivity extends AppCompatActivity {
+public class UpdateCyclistActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
