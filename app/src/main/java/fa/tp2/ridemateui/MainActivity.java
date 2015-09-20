@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -25,7 +26,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+        ImageButton createCyclist  = (ImageButton) findViewById(R.id.imageCreate);
+        ImageButton deleteCyclist = (ImageButton) findViewById(R.id.imageDelete);
+        ImageButton updateCyclist  = (ImageButton) findViewById(R.id.imageUpdate);
+
     }
 
     @Override

@@ -29,7 +29,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/imageroadbike"
                     android:src="@drawable/cycler1"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:layout_gravity="bottom" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -48,9 +49,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/imagemtb"
-                    android:layout_gravity="right|top"
                     android:layout_weight="1"
-                    android:src="@drawable/cycler2" />
+                    android:src="@drawable/cycler2"
+                    android:layout_gravity="bottom" />
 
             </LinearLayout>
         </LinearLayout>
@@ -60,105 +61,9 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#a5ffd9"
-        android:padding="10dp"
-        android:id="@+id/MidArea">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Select"
-            android:id="@+id/textView"
-            android:paddingBottom="20dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent">
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView"
-                android:src="@drawable/view"
-                android:background="#00000000"
-                android:layout_weight="1"
-                android:clickable="true" />
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageAdd"
-                android:src="@drawable/add"
-                android:background="#00000000"
-                android:layout_weight="1"
-                android:clickable="true" />
-
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageDelete"
-                android:src="@drawable/delete"
-                android:background="#00000000"
-                android:layout_weight="1"
-                android:clickable="true" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="View the List"
-                android:id="@+id/textSelectAdd"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:paddingLeft="7dp"
-                android:paddingRight="7dp" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Create a cyclist record"
-                android:id="@+id/textSelectDelete"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:paddingLeft="7dp"
-                android:paddingRight="7dp" />
-
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Delete a cyclist"
-                android:id="@+id/textSelectUpdate"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:paddingLeft="7dp"
-                android:paddingRight="7dp" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="320dp"
         android:id="@+id/BottomArea"
-        >
+        android:weightSum="1">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -172,45 +77,86 @@
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Select the cyclist to update"
+                android:text="Select a Cyclist to Update"
                 android:id="@+id/textListCyclists"
                 android:paddingLeft="20dp"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_vertical" />
         </LinearLayout>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="Name"
-            android:ems="10"
-            android:id="@+id/editName" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="Surname"
-            android:ems="10"
-            android:id="@+id/editSurname" />
 
-        <EditText
+        <ListView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/editText3"
-            android:text="Enter Age" />
+            android:layout_height="195dp"
+            android:id="@+id/listView"
+            android:smoothScrollbar="true" />
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="SEARCH"
-            android:id="@+id/btnSearch"
+            android:text="DELETE"
+            android:id="@+id/btnDelete"
             android:background="#ff5272"
-            android:enabled="true" />
+            android:enabled="true"
+            android:layout_weight="0.11"
+            android:elegantTextHeight="false"
+            android:clickable="true" />
 
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:background="#a5ffd9"
+        android:padding="10dp"
+        android:id="@+id/MidArea"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.27">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgBtnHome"
+                android:layout_weight="1"
+                android:src="@drawable/home"
+                android:background="#00000000"
+                android:clickable="true" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgBtnList"
+                android:src="@drawable/view"
+                android:background="#00000000"
+                android:layout_weight="1"
+                android:clickable="true" />
+
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgBtnAdd"
+                android:src="@drawable/add"
+                android:background="#00000000"
+                android:layout_weight="1"
+                android:clickable="true" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgBtnDelete"
+                android:layout_weight="1"
+                android:src="@drawable/delete"
+                android:clickable="true"
+                android:background="#00000000" />
+
+        </LinearLayout>
     </LinearLayout>
 
   <!-- Icons from: https://icons8.com/web-app/category/android/Very-Basic -->

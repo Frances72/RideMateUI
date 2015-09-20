@@ -29,7 +29,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/imageroadbike"
                     android:src="@drawable/cycler1"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:layout_gravity="bottom" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -48,9 +49,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/imagemtb"
-                    android:layout_gravity="right|top"
                     android:layout_weight="1"
-                    android:src="@drawable/cycler2" />
+                    android:src="@drawable/cycler2"
+                    android:layout_gravity="bottom" />
 
             </LinearLayout>
         </LinearLayout>
@@ -60,31 +61,91 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#a5ffd9"
-        android:padding="10dp"
-        android:id="@+id/MidArea">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Select"
-            android:id="@+id/textView"
-            android:paddingBottom="20dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:textStyle="bold" />
+        android:layout_height="320dp"
+        android:id="@+id/BottomArea"
+        android:weightSum="1">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></LinearLayout>
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="#7fc1f2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Create New Cyclist"
+                android:id="@+id/textListCyclists"
+                android:paddingLeft="20dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical" />
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Name"
+            android:ems="10"
+            android:id="@+id/editName"
+            android:height="20dp"
+            android:layout_weight="0.11" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Surname"
+            android:ems="10"
+            android:id="@+id/editSurname"
+            android:layout_weight="0.11" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editAge"
+            android:text="Enter Age"
+            android:layout_weight="0.11" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="SUBMIT"
+            android:id="@+id/buttonSubmit1"
+            android:background="#ff5272"
+            android:enabled="true"
+            android:layout_weight="0.11"
+            android:elegantTextHeight="false"
+            android:clickable="true" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#a5ffd9"
+        android:padding="10dp"
+        android:id="@+id/MidArea"
+        android:layout_weight="0.40">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgBtnHome"
+                android:layout_weight="1"
+                android:src="@drawable/home"
+                android:background="#00000000"
+                android:clickable="true" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -120,97 +181,8 @@
             android:layout_width="fill_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="View the List"
-                android:id="@+id/textSelectAdd"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:paddingLeft="7dp"
-                android:paddingRight="7dp" />
 
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Delete a cyclist record"
-                android:id="@+id/textSelectDelete"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:paddingLeft="7dp"
-                android:paddingRight="7dp" />
-
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Update a cyclist"
-                android:id="@+id/textSelectUpdate"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:paddingLeft="7dp"
-                android:paddingRight="7dp" />
         </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/BottomArea"
-        >
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:background="#7fc1f2">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Create New Cyclist"
-                android:id="@+id/textListCyclists"
-                android:paddingLeft="20dp"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center_vertical" />
-        </LinearLayout>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="Name"
-            android:ems="10"
-            android:id="@+id/editName" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="Surname"
-            android:ems="10"
-            android:id="@+id/editSurname" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/editAge"
-            android:text="Enter Age" />
-
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="SUBMIT"
-            android:id="@+id/buttonSubmit1"
-            android:background="#ff5272"
-            android:enabled="true" />
-
     </LinearLayout>
 
     <!-- Icons from: https://icons8.com/web-app/category/android/Very-Basic -->

@@ -3,10 +3,7 @@ package fa.tp2.ridemateui.views;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -30,8 +27,8 @@ public class DeleteCyclistActivity extends AppCompatActivity {
         setContentView(R.layout.deletecyclist);
         System.out.println("DeleteCyclist page is open");
 
-        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
-        getActionBar().hide();
+        //getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+       // getActionBar().hide();
 
         c = this;
 
@@ -59,11 +56,13 @@ public class DeleteCyclistActivity extends AppCompatActivity {
 
                 if (firstname.length() == 0 || lastname.length() == 0 || age.length() == 0) {
                     Toast.makeText(c, "Please fill in name, surname and age", Toast.LENGTH_SHORT).show();
-                    return;
+                    //return;
                 }
-                 };
-            )
-        }
+            }
+
+        });
+    }
+}
 /*    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -85,4 +84,3 @@ public class DeleteCyclistActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }*/
-}
