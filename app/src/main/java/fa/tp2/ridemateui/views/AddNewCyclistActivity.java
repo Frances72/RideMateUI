@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -28,10 +27,10 @@ public class AddNewCyclistActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        System.out.println("AddNewCyclist page is open");
+        System.out.println("AddNewCyclist page is open");//test
 
-        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
-        getActionBar().hide();
+      //  getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+      //  getActionBar().hide();
 
         c = this;
 
@@ -47,10 +46,11 @@ public class AddNewCyclistActivity extends Activity {
             public void onClick(View v) {
                 System.out.println("Submit button hit on AddNewCyclist");//test
 
-                String firstname = editName.getText() + "";
-                String lastname = editSurname.getText() + "";
-                String age = editAge.getText() + "";
-//tests
+                String firstname = editName.getText().toString();
+                String lastname = editSurname.getText().toString();
+                String age = editAge.getText().toString();
+                //new PostCyclist().execute(cyclist);
+
                 System.out.println("Name:" + firstname);//test
                 System.out.println("Surname:" + lastname);//test
                 System.out.println("Age:" + age);//test
