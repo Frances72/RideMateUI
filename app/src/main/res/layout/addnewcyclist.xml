@@ -93,7 +93,8 @@
             android:ems="10"
             android:id="@+id/editName"
             android:height="20dp"
-            android:layout_weight="0.11" />
+            android:layout_weight="0.11"
+            android:editable="true" />
 
         <EditText
             android:layout_width="match_parent"
@@ -102,7 +103,8 @@
             android:text="Surname"
             android:ems="10"
             android:id="@+id/editSurname"
-            android:layout_weight="0.11" />
+            android:layout_weight="0.11"
+            android:editable="true" />
 
         <EditText
             android:layout_width="match_parent"
@@ -110,8 +112,10 @@
             android:inputType="number"
             android:ems="10"
             android:id="@+id/editAge"
-            android:text="Enter Age"
-            android:layout_weight="0.11" />
+            android:layout_weight="0.11"
+            android:editable="true"
+            android:contentDescription="Enter Age"
+            android:text="Enter Age:  " />
 
         <Button
             android:layout_width="fill_parent"

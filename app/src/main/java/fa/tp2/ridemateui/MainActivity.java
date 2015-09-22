@@ -23,7 +23,7 @@ import fa.tp2.ridemateui.views.ViewAll;
 public class MainActivity extends AppCompatActivity {
 
     private RestCyclistAPI restSubjectAPI = new RestCyclistAPI();
-    List<Cyclist> subjectList = new ArrayList<Cyclist>();
+    List<Cyclist> subjectList = new ArrayList<>();
     ListView subjectsList;
     CyclistAdapter adapter ;
     Cyclist[] cyclistl;

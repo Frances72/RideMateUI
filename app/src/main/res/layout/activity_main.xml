@@ -137,12 +137,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
+            <ImageButton
                 android:layout_width="81dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/imgBtnList"
                 android:src="@drawable/view"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                android:background="#00000000" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -184,6 +185,12 @@
 
         </LinearLayout>
     </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#7fc1f2"></LinearLayout>
 
     <!-- Icons from: https://icons8.com/web-app/category/android/Very-Basic -->
 </LinearLayout>

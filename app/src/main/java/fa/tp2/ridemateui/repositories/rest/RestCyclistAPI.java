@@ -16,7 +16,7 @@ import fa.tp2.ridemateui.repositories.RestAPI;
  * Created by User on 2015/09/12.
  */
 public class RestCyclistAPI implements RestAPI<Cyclist, Long> {
-    final String BASE_URL = "http//localhost:8080/api/";
+    final String BASE_URL = "http//localhost:8183/cyclerpage/";
 
     final HttpHeaders requestHeaders = RestMethods.getHeaders();
     final RestTemplate restTemplate = RestMethods.getRestTemplate();
@@ -32,7 +32,7 @@ public class RestCyclistAPI implements RestAPI<Cyclist, Long> {
 
     @Override
     public String post(Cyclist entity) {
-        final String url = BASE_URL + "cyclist/create";
+        final String url = BASE_URL + "createCycler";
         HttpEntity<Cyclist> requestEntity = new HttpEntity<Cyclist>(entity, requestHeaders);
         ResponseEntity<String> responseEntity = restTemplate.exchange(url, HttpMethod.POST, requestEntity, String.class);
         String result = responseEntity.getBody();
@@ -41,7 +41,7 @@ public class RestCyclistAPI implements RestAPI<Cyclist, Long> {
 
     @Override
     public String put(Cyclist entity) {
-        final String url = BASE_URL + "cyclist/update/" + entity.getId().toString();
+        final String url = BASE_URL + "updateCycler" + entity.getId().toString();
         HttpEntity<Cyclist> requestEntity = new HttpEntity<Cyclist>(entity, requestHeaders);
         ResponseEntity<String> responseEntity = restTemplate.exchange(url, HttpMethod.PUT, requestEntity, String.class);
         String result = responseEntity.getBody();
@@ -50,7 +50,7 @@ public class RestCyclistAPI implements RestAPI<Cyclist, Long> {
 
     @Override
     public String delete(Cyclist entity) {
-        final String url = BASE_URL + "cyclist/delete/" + entity.getId().toString();
+        final String url = BASE_URL + "deleteCycler" + entity.getId().toString();
         HttpEntity<Cyclist> requestEntity = new HttpEntity<Cyclist>(entity, requestHeaders);
         ResponseEntity<String> responseEntity = restTemplate.exchange(url, HttpMethod.PUT, requestEntity, String.class);
         return responseEntity.getBody();
@@ -59,7 +59,7 @@ public class RestCyclistAPI implements RestAPI<Cyclist, Long> {
     @Override
     public List<Cyclist> getAll() {
         List<Cyclist> cyclists = new ArrayList<>();
-        final String url = BASE_URL + "cyclists/";
+        final String url = BASE_URL + "cyclerdisplay";
         HttpEntity<?> requestEntity = new HttpEntity<Object>(requestHeaders);
         ResponseEntity<Cyclist[]> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, Cyclist[].class);
         Cyclist[] results = responseEntity.getBody();
