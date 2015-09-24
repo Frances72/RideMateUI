@@ -19,28 +19,28 @@ import fa.tp2.ridemateui.repositories.rest.RestCyclistAPI;
 import fa.tp2.ridemateui.views.Adapters.CyclistAdapter;
 
 /**
- * Created by User on 2015/09/12.
+ * Created by User on 2015/09/24.
  */
-public class DeleteCyclistActivity extends Activity {
+public class SelectListActivity extends Activity {
 
     EditText editName;
     EditText editSurname;
     EditText editAge;
     Button btnDelete;
+    Button btnUpdate;
     Context c;
+
     private RestCyclistAPI restCyclistAPI = new RestCyclistAPI();
     List<Cyclist> cyclistList = new ArrayList<Cyclist>();
     ListView listView;
     CyclistAdapter adapter ;
     Cyclist[] cyclist;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.deletecyclist);
-        System.out.println("DeleteCyclist page is open");
+        setContentView(R.layout.selectlist);
+        System.out.println("selectlist page is open");
 
         listView = (ListView) findViewById(R.id.listView);
         new GetCyclistsTask().execute();
@@ -51,7 +51,8 @@ public class DeleteCyclistActivity extends Activity {
         editName        = (EditText) findViewById(R.id.editName);
         editSurname     = (EditText) findViewById(R.id.editSurname);
         editAge         = (EditText) findViewById(R.id.editAge);
-        btnDelete  = (Button) findViewById(R.id.btnDelete);
+        btnDelete       = (Button) findViewById(R.id.btnDelete);
+        btnUpdate       = (Button) findViewById(R.id.btnUpdate);
 
         btnDelete.setOnClickListener(new View.OnClickListener() {
 
@@ -76,6 +77,31 @@ public class DeleteCyclistActivity extends Activity {
             }
 
         });
+
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+                System.out.println("Submit button hit on SelectList");//test
+
+                String firstname = editName.getText() + "";
+                String lastname = editSurname.getText() + "";
+                String age = editAge.getText() + "";
+
+                System.out.println("Name:" + firstname);//test
+                System.out.println("Surname:" + lastname);//test
+                System.out.println("Age:" + age);//test
+
+
+                if (firstname.length() == 0 || lastname.length() == 0 || age.length() == 0) {
+                    Toast.makeText(c, "Please select a cyclist", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+
+        });
+
     }
     class GetCyclistsTask extends AsyncTask<Void, Void, List<Cyclist>> {
         List<Cyclist> cyclists = new ArrayList<Cyclist>();
@@ -87,31 +113,10 @@ public class DeleteCyclistActivity extends Activity {
         protected void onPostExecute( List<Cyclist> cyclists) {
             cyclistList = cyclists;
             cyclist = cyclistList.toArray(new Cyclist[cyclistList.size()]);
-            adapter = new CyclistAdapter(DeleteCyclistActivity.this, R.id.listView, cyclist);
+            adapter = new CyclistAdapter(SelectListActivity.this, R.id.listView, cyclist);
             listView.setAdapter(adapter);
 
         }
 
     }
 }
-/*    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_deletecyclist, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }*/

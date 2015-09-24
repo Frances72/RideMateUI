@@ -63,21 +63,19 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#a5ffd9"
+        android:background="#00000000"
         android:padding="10dp"
         android:id="@+id/layMain" >
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=" Select An Action:"
+            android:text="Select and Action"
             android:id="@+id/txtSelectAction"
-            android:paddingBottom="20dp"
             android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:textStyle="bold"
-            android:layout_weight="1" />
+            android:background="#7fc1f2"
+            android:gravity="center_vertical|center_horizontal" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -190,7 +188,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#7fc1f2"></LinearLayout>
+        android:background="#a5ffd9"></LinearLayout>
 
     <!-- Icons from: https://icons8.com/web-app/category/android/Very-Basic -->
 </LinearLayout>

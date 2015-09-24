@@ -66,17 +66,18 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:background="#7fc1f2">
+            android:background="#7fc1f2"
+            android:layout_marginTop="10dp">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="49dp"
+                android:layout_height="50dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="View All Cyclists"
                 android:id="@+id/textListCyclists"
                 android:paddingLeft="20dp"
                 android:layout_gravity="center_horizontal"
-                android:gravity="center_vertical" />
+                android:gravity="center_vertical|center_horizontal" />
         </LinearLayout>
 
 
@@ -85,7 +86,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/listView"
-            android:smoothScrollbar="true" />
+            android:smoothScrollbar="true"
+            android:layout_marginBottom="5dp" />
 
 
 
@@ -97,7 +99,8 @@
         android:background="#a5ffd9"
         android:padding="10dp"
         android:id="@+id/MidArea"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:layout_marginTop="10dp">
 
         <LinearLayout
             android:orientation="horizontal"

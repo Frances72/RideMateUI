@@ -72,17 +72,17 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:background="#7fc1f2">
+            android:background="#7fc1f2"
+            android:layout_marginTop="10dp">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="49dp"
+                android:layout_height="50dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Select a Cyclist to Delete"
+                android:text="Select a Cyclist to Delete or Update"
                 android:id="@+id/textListCyclists"
                 android:paddingLeft="20dp"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center_vertical" />
+                android:gravity="center_vertical|center_horizontal" />
         </LinearLayout>
 
 
@@ -93,14 +93,15 @@
             android:id="@+id/listView"
             android:smoothScrollbar="true" />
 
+
         <Button
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="DELETE"
             android:id="@+id/btnDelete"
             android:background="#ff5272"
             android:enabled="true"
-            android:layout_weight="0.11"
+            android:layout_weight="1"
             android:elegantTextHeight="false"
             android:clickable="true" />
 
@@ -112,7 +113,8 @@
         android:background="#a5ffd9"
         android:padding="10dp"
         android:id="@+id/MidArea"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:layout_marginTop="10dp">
 
         <LinearLayout
             android:orientation="horizontal"

@@ -72,7 +72,9 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:background="#7fc1f2">
+            android:background="#7fc1f2"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_marginTop="10dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -82,27 +84,91 @@
                 android:id="@+id/textListCyclists"
                 android:paddingLeft="20dp"
                 android:layout_gravity="center_horizontal"
-                android:gravity="center_vertical" />
+                android:gravity="center_vertical|center_horizontal" />
         </LinearLayout>
 
 
 
-        <ListView
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="195dp"
-            android:id="@+id/listView"
-            android:smoothScrollbar="true" />
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp">
 
-        <Button
-            android:layout_width="fill_parent"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Name"
+                android:id="@+id/textView2"
+                android:layout_weight="0.15" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText2"
+                android:layout_weight="1.34" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="DELETE"
-            android:id="@+id/btnDelete"
-            android:background="#ff5272"
-            android:enabled="true"
-            android:layout_weight="0.11"
-            android:elegantTextHeight="false"
-            android:clickable="true" />
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Surname"
+                android:id="@+id/textView"
+                android:layout_weight="1" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText"
+                android:layout_weight="7.84" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Age"
+                android:id="@+id/textView3"
+                android:layout_weight="0.37" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText3"
+                android:layout_weight="2" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="UPDATE"
+                android:id="@+id/btnUpdate"
+                android:layout_weight="1"
+                android:background="#ff5272"
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
     <LinearLayout
@@ -112,7 +178,8 @@
         android:background="#a5ffd9"
         android:padding="10dp"
         android:id="@+id/MidArea"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:layout_marginTop="10dp">
 
         <LinearLayout
             android:orientation="horizontal"

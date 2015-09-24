@@ -1,8 +1,8 @@
 package fa.tp2.ridemateui;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,7 +20,7 @@ import fa.tp2.ridemateui.views.DeleteCyclistActivity;
 import fa.tp2.ridemateui.views.UpdateCyclistActivity;
 import fa.tp2.ridemateui.views.ViewAll;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private RestCyclistAPI restSubjectAPI = new RestCyclistAPI();
     List<Cyclist> subjectList = new ArrayList<>();

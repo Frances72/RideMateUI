@@ -39,7 +39,7 @@ public class AddNewCyclistActivity extends Activity {
         editName        = (EditText) findViewById(R.id.editName);
         editSurname     = (EditText) findViewById(R.id.editSurname);
         editAge         = (EditText) findViewById(R.id.editAge);
-        buttonSubmit1   = (Button) findViewById(R.id.buttonSubmit1);
+        buttonSubmit1   = (Button) findViewById(R.id.btnSubmitNew);
 
         buttonSubmit1.setOnClickListener(new View.OnClickListener() {
             @Override
