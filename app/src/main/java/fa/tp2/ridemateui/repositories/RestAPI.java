@@ -6,7 +6,7 @@ import java.util.List;
  * Created by User on 2015/09/12.
  */
 public interface RestAPI<S, ID> {
-    S get(ID id);
+    S getAll(ID id);
 
     String post(S entity);
 

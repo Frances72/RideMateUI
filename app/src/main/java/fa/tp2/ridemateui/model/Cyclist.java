@@ -25,7 +25,7 @@ public class Cyclist {
         this.firstname = name;
     }
 
-    public String getLatName() {
+    public String getLastname() {
         return lastname;
     }
 

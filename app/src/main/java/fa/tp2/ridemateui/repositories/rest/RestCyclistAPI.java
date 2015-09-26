@@ -16,13 +16,13 @@ import fa.tp2.ridemateui.repositories.RestAPI;
  * Created by User on 2015/09/12.
  */
 public class RestCyclistAPI implements RestAPI<Cyclist, Long> {
-    final String BASE_URL = "http//192.168.56.1/cyclerpage/";
+    final String BASE_URL = "http://localhost:8183/cyclerpage/";  //192.168.56.1
 
     final HttpHeaders requestHeaders = RestMethods.getHeaders();
     final RestTemplate restTemplate = RestMethods.getRestTemplate();
 
     @Override
-    public Cyclist get(Long id) {
+    public Cyclist getAll(Long id) {
         final String url = BASE_URL + "cyclerdisplay/" + id.toString();
         HttpEntity<Cyclist> requestEntity = new HttpEntity<Cyclist>(requestHeaders);
         ResponseEntity<Cyclist> responseEntity = restTemplate.exchange(url, HttpMethod.GET, requestEntity, Cyclist.class);

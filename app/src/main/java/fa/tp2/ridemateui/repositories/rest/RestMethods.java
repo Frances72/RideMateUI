@@ -9,7 +9,6 @@ import org.springframework.web.client.RestTemplate;
 public class RestMethods {
     public static RestTemplate getRestTemplate() {
         RestTemplate restTemplate = new RestTemplate();
-        // Add the Gson message converter
         restTemplate.getMessageConverters().add(new GsonHttpMessageConverter());
         return restTemplate;
     }

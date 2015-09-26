@@ -2,6 +2,7 @@ package fa.tp2.ridemateui.views;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,17 +25,17 @@ import fa.tp2.ridemateui.views.Adapters.CyclistAdapter;
 public class ViewAll extends Activity {
     private RestCyclistAPI restCyclistAPI = new RestCyclistAPI();
     List<Cyclist> cyclistList = new ArrayList<>();
-    ListView listView;
+    ListView allCyclists;
     CyclistAdapter adapter ;
-    Cyclist[] cyclist;
+    Cyclist[] cyclistA;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.viewall);
-        listView = (ListView) findViewById(R.id.listView);
-      //  new GetCyclistsTask().execute();
+        allCyclists = (ListView) findViewById(R.id.listAll);
+        new GetCyclistsTask().execute();
 
         ImageButton createCyclistBtn = (ImageButton) findViewById(R.id.imgBtnAdd);
         ImageButton deleteCyclistBtn = (ImageButton) findViewById(R.id.imgBtnDelete);
@@ -99,7 +100,7 @@ public class ViewAll extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-/*
+
     class GetCyclistsTask extends AsyncTask<Void, Void, List<Cyclist>> {
         List<Cyclist> cyclists = new ArrayList<>();
 
@@ -109,13 +110,13 @@ public class ViewAll extends Activity {
         }
         protected void onPostExecute( List<Cyclist> cyclists) {
             cyclistList = cyclists;
-            cyclist = cyclistList.toArray(new Cyclist[cyclistList.size()]);
-            adapter = new CyclistAdapter(ViewAll.this, R.id.listView, cyclist);
-            listView.setAdapter(adapter);
+            cyclistA = cyclistList.toArray(new Cyclist[cyclistList.size()]);
+            adapter = new CyclistAdapter(ViewAll.this, R.id.listAll, cyclistA);
+            allCyclists.setAdapter(adapter);
             //trying to set a selector for the list item
             //listView.setOnItemClickListener(new CyclistAdapter().On);
 
         }
 
-    }*/
+    }
 }

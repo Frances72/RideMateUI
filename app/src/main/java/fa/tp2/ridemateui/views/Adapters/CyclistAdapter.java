@@ -16,8 +16,8 @@ import fa.tp2.ridemateui.model.Cyclist;
 public class CyclistAdapter extends ArrayAdapter<Cyclist> {
 
     private Cyclist[] values;
-    public CyclistAdapter(Context context, int resource, Cyclist[] values) {
 
+    public CyclistAdapter(Context context, int resource, Cyclist[] values) {
         super(context, resource, values);
         this.values = values;
     }
@@ -34,7 +34,7 @@ public class CyclistAdapter extends ArrayAdapter<Cyclist> {
         TextView txtSurname = (TextView) view.findViewById(R.id.txtSurname);
         TextView txtAge = (TextView) view.findViewById(R.id.txtAge);
         txtName.setText(values[position].getName());
-        txtSurname.setText(values[position].getLatName());
+        txtSurname.setText(values[position].getLastname());
         txtAge.setText(values[position].getAge());
         return view;
     }
