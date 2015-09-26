@@ -22,12 +22,16 @@
             android:label="@string/title_addnewcyclist" >
         </activity>
         <activity
-            android:name=".views.DeleteCyclistActivity"
-            android:label="@string/title_deletecyclist" >
+            android:name=".views.SelectListActivity"
+            android:label="@string/title_selectlist" >
         </activity>
         <activity
             android:name=".views.UpdateCyclistActivity"
             android:label="@string/title_updatecyclist" >
+        </activity>
+        <activity
+            android:name=".views.ViewAll"
+            android:label="@string/title_viewall" >
         </activity>
     </application>
 
