@@ -2,46 +2,85 @@ package fa.tp2.ridemateui.views;
 
 import android.app.Activity;
 import android.content.Context;
-import android.os.AsyncTask;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
+import fa.tp2.ridemateui.MainActivity;
 import fa.tp2.ridemateui.R;
+import fa.tp2.ridemateui.model.Cyclist;
+import fa.tp2.ridemateui.repositories.rest.RestCyclistAPI;
 
 /**
  * Created by User on 2015/09/12.
  */
 public class AddNewCyclistActivity extends Activity {
-
+    private RestCyclistAPI restSubjectAPI = new RestCyclistAPI();
+    Cyclist cyclist;
     EditText editName;
     EditText editSurname;
     EditText editAge;
     Button buttonSubmit1;
     Context c;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         System.out.println("AddNewCyclist page is open");//test
-
-      //  getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
-      //  getActionBar().hide();
-
-
-
-        c = this;
-
         setContentView(R.layout.addnewcyclist);
 
-        editName        = (EditText) findViewById(R.id.editName);
-        editSurname     = (EditText) findViewById(R.id.editSurname);
-        editAge         = (EditText) findViewById(R.id.editAge);
-        buttonSubmit1   = (Button) findViewById(R.id.btnSubmitNew);
+        editName = (EditText) findViewById(R.id.editName);
+        editSurname = (EditText) findViewById(R.id.editSurname);
+        editAge = (EditText) findViewById(R.id.editAge);
+        buttonSubmit1 = (Button) findViewById(R.id.btnSubmitNew);
+
+        //initailizing buttons
+        ImageButton goHomeBtn        = (ImageButton) findViewById(R.id.imgBtnHome);
+        ImageButton deleteCyclistBtn = (ImageButton) findViewById(R.id.imgBtnDelete);
+        ImageButton updateCyclistBtn = (ImageButton) findViewById(R.id.imgBtnUpdate);
+        ImageButton viewAllListBtn   = (ImageButton) findViewById(R.id.imageView);
+
+
+        //Main Page: different buttons
+
+        goHomeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addCyclist = new Intent(AddNewCyclistActivity.this, MainActivity.class);
+                startActivity(addCyclist);
+            }
+        });
+
+        deleteCyclistBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent deleteCyclist = new Intent(AddNewCyclistActivity.this, SelectListActivity.class);
+                startActivity(deleteCyclist);
+            }
+        });
+
+
+        updateCyclistBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent updateCyclist = new Intent(AddNewCyclistActivity.this, SelectListActivity.class);
+                startActivity(updateCyclist);
+            }
+        });
+
+        viewAllListBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent viewCyclists = new Intent(AddNewCyclistActivity.this, ViewAll.class);
+                startActivity(viewCyclists);
+            }
+        });
+
+
 
         buttonSubmit1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +90,7 @@ public class AddNewCyclistActivity extends Activity {
                 String firstname = editName.getText().toString();
                 String lastname = editSurname.getText().toString();
                 String age = editAge.getText().toString();
+
                 //new PostCyclist().execute(cyclist);
 
                 System.out.println("Name:" + firstname);//test
@@ -63,46 +103,23 @@ public class AddNewCyclistActivity extends Activity {
                     return;
                 }
 
-           }
+            }
 
-  });
+        });
     }
+/*
+    private class PostSubject extends AsyncTask<String, Void, String> {
 
- public class Networking extends AsyncTask{
-  @Override
-    protected Object doInBackground(Object[] params){
-      System.out.println("Do in background has been called");
-      return null;
-  }
-private void getJson(String url,String state ){
-    if (state.equals("NewCyclist"))
-    {
-        return;
-    }
-    }
-}
-}
+        protected String doInBackground(String... params) {
+            String firstname = params[0];
+            String lastname = params[0];
+            String age = params[0];
 
-
-  /*  @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_addnewcyclist, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+            return null;
         }
 
-        return super.onOptionsItemSelected(item);
-    }
-}*/
+    }*/
+}
+
+
+

@@ -2,7 +2,6 @@ package fa.tp2.ridemateui.views;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,10 +34,10 @@ public class ViewAll extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.viewall);
         listView = (ListView) findViewById(R.id.listView);
-        new GetCyclistsTask().execute();
+      //  new GetCyclistsTask().execute();
 
-        ImageButton createCyclistBtn = (ImageButton) findViewById(R.id.imgbtnAddNew);
-        ImageButton deleteCyclistBtn = (ImageButton) findViewById(R.id.imgBtndelete2);
+        ImageButton createCyclistBtn = (ImageButton) findViewById(R.id.imgBtnAdd);
+        ImageButton deleteCyclistBtn = (ImageButton) findViewById(R.id.imgBtnDelete);
         ImageButton updateCyclistBtn = (ImageButton) findViewById(R.id.imgBtnUpdate);
         ImageButton goHomeBtn        = (ImageButton) findViewById(R.id.imgBtnHome);
 
@@ -100,7 +99,7 @@ public class ViewAll extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-
+/*
     class GetCyclistsTask extends AsyncTask<Void, Void, List<Cyclist>> {
         List<Cyclist> cyclists = new ArrayList<>();
 
@@ -118,5 +117,5 @@ public class ViewAll extends Activity {
 
         }
 
-    }
+    }*/
 }

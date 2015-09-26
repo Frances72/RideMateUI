@@ -158,7 +158,8 @@
                 android:text="SUBMIT"
                 android:id="@+id/btnSubmitNew"
                 android:layout_weight="1"
-                android:background="#ff5272" />
+                android:background="#ff5272"
+                android:onClick="onClick"/>
 
         </LinearLayout>
     </LinearLayout>

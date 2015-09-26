@@ -85,7 +85,7 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="66dp"
-                android:id="@+id/imgbtnAddNew"
+                android:id="@+id/imgbtnAdd"
                 android:src="@drawable/add"
                 android:background="#00000000"
                 android:clickable="true"
@@ -113,7 +113,7 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imgBtndelete2"
+                android:id="@+id/imgBtnDelete"
                 android:src="@drawable/delete"
                 android:background="#00000000"
                 android:layout_weight="1.38"
@@ -140,7 +140,7 @@
             <ImageButton
                 android:layout_width="81dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/imgBtnList"
+                android:id="@+id/imageView"
                 android:src="@drawable/view"
                 android:layout_gravity="left"
                 android:background="#00000000"
@@ -180,7 +180,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Update a Cyclist&apos;s info"
+                android:text="Update a Cyclist&apos;s nfo"
                 android:id="@+id/txtUpdate"
                 android:gravity="center"
                 android:layout_weight="1" />

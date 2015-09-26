@@ -3,17 +3,18 @@ package fa.tp2.ridemateui.views;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import fa.tp2.ridemateui.MainActivity;
 import fa.tp2.ridemateui.R;
 import fa.tp2.ridemateui.model.Cyclist;
 import fa.tp2.ridemateui.repositories.rest.RestCyclistAPI;
@@ -32,28 +33,56 @@ public class SelectListActivity extends Activity {
     Context c;
     private static final int request_code = 5;
 
+
+
     private RestCyclistAPI restCyclistAPI = new RestCyclistAPI();
     List<Cyclist> cyclistList = new ArrayList<Cyclist>();
     ListView listView;
     CyclistAdapter adapter ;
     Cyclist[] cyclist;
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selectlist);
-        System.out.println("selectlist page is open");
+        System.out.println("selectlist page is open");//test
+
+        ImageButton createCyclistBtn = (ImageButton) findViewById(R.id.imgBtnAdd);
+        ImageButton viewAllListBtn = (ImageButton) findViewById(R.id.imageView);
+        ImageButton goHomeBtn        = (ImageButton) findViewById(R.id.imgBtnHome);
+
+        //Add Button Handlers
+
+        createCyclistBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addCyclist = new Intent(SelectListActivity.this, AddNewCyclistActivity.class);
+                startActivity(addCyclist);
+            }
+        });
+
+        viewAllListBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent viewCyclists = new Intent(SelectListActivity.this, ViewAll.class);
+                startActivity(viewCyclists);
+            }
+        });
+
+        goHomeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent homePage = new Intent(SelectListActivity.this, MainActivity.class);
+                startActivity(homePage);
+            }
+        });
+
+
 
         listView = (ListView) findViewById(R.id.listView);
-        new GetCyclistsTask().execute();
+       // new GetCyclistsTask().execute();
 
-        c = this;
-
-//assign the EditText values to variable names
+     //assign the EditText values to variable names
         editName    = (EditText) findViewById(R.id.editName);
         editSurname = (EditText) findViewById(R.id.editSurname);
         editAge     = (EditText) findViewById(R.id.editAge);
@@ -68,16 +97,7 @@ public class SelectListActivity extends Activity {
             public void onClick(View v) {
                 System.out.println("Submit button hit on selectlist page");//test
 
-                String firstname = editName.getText() + "";
-                String lastname = editSurname.getText() + "";
-                String age = editAge.getText() + "";
-
-                System.out.println("Name:" + firstname);//test
-                System.out.println("Surname:" + lastname);//test
-                System.out.println("Age:" + age);//test
-
-
-                if (firstname.length() == 0 || lastname.length() == 0 || age.length() == 0) {
+                if (editName.length() == 0 || editSurname.length() == 0 || editAge.length() == 0) {
                     Toast.makeText(c, "Please fill in name, surname and age", Toast.LENGTH_SHORT).show();
 
                 }
@@ -92,16 +112,7 @@ public class SelectListActivity extends Activity {
             public void onClick(View v) {
                 System.out.println("Submit button hit on SelectList");//test
 
-                String firstname = editName.getText() + "";
-                String lastname = editSurname.getText() + "";
-                String age = editAge.getText() + "";
-
-                System.out.println("Name:" + firstname);//test
-                System.out.println("Surname:" + lastname);//test
-                System.out.println("Age:" + age);//test
-
-
-                if (firstname.length() == 0 || lastname.length() == 0 || age.length() == 0) {
+                 if (editName.length() == 0 || editSurname.length() == 0 || editAge.length() == 0) {
                     Toast.makeText(c, "Please select a cyclist", Toast.LENGTH_SHORT).show();
 
                 }
@@ -110,7 +121,7 @@ public class SelectListActivity extends Activity {
         });
 
     }
-    class GetCyclistsTask extends AsyncTask<Void, Void, List<Cyclist>> {
+ /*   class GetCyclistsTask extends AsyncTask<Void, Void, List<Cyclist>> {
         List<Cyclist> cyclists = new ArrayList<Cyclist>();
 
         protected List<Cyclist> doInBackground(Void... params) {
@@ -123,20 +134,12 @@ public class SelectListActivity extends Activity {
             adapter = new CyclistAdapter(SelectListActivity.this, R.id.listView, cyclist);
             listView.setAdapter(adapter);
 
-        }
-
-
-
-
+        }*/
 
         //how to take name, surname and age to UpdateCyclistActivity
 
          protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if ((requestCode == request_code) && (resultCode == RESULT_OK)) {
-
-				editName        = (EditText) findViewById(R.id.editName);
-                editSurname     = (EditText) findViewById(R.id.editSurname);
-                editAge         = (EditText) findViewById(R.id.editAge);
 
 				String returnString = data.getExtras().getString("returnData");
 
@@ -170,4 +173,4 @@ public class SelectListActivity extends Activity {
 
     }
 
-}
+//}

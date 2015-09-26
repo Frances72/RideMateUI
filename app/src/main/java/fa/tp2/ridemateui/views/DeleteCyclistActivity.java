@@ -1,28 +1,12 @@
 package fa.tp2.ridemateui.views;
 
 import android.app.Activity;
-import android.content.Context;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import fa.tp2.ridemateui.R;
-import fa.tp2.ridemateui.model.Cyclist;
-import fa.tp2.ridemateui.repositories.rest.RestCyclistAPI;
-import fa.tp2.ridemateui.views.Adapters.CyclistAdapter;
 
 /**
  * Created by User on 2015/09/12.
  */
 public class DeleteCyclistActivity extends Activity {
-
+/*
     EditText editName;
     EditText editSurname;
     EditText editAge;
@@ -92,7 +76,7 @@ public class DeleteCyclistActivity extends Activity {
 
         }
 
-    }
+    }*/
 }
 /*    @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -7,25 +7,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ListView;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import fa.tp2.ridemateui.model.Cyclist;
-import fa.tp2.ridemateui.repositories.rest.RestCyclistAPI;
-import fa.tp2.ridemateui.views.Adapters.CyclistAdapter;
 import fa.tp2.ridemateui.views.AddNewCyclistActivity;
 import fa.tp2.ridemateui.views.SelectListActivity;
 import fa.tp2.ridemateui.views.ViewAll;
 
 public class MainActivity extends Activity {
 
-    private RestCyclistAPI restSubjectAPI = new RestCyclistAPI();
+    /*private RestCyclistAPI restSubjectAPI = new RestCyclistAPI();
     List<Cyclist> subjectList = new ArrayList<>();
     ListView subjectsList;
     CyclistAdapter adapter ;
-    Cyclist[] cyclistl;
+    Cyclist[] cyclistl;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +26,10 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         //initailizing buttons
-        ImageButton createCyclistBtn = (ImageButton) findViewById(R.id.imgbtnAddNew);
-        ImageButton deleteCyclistBtn = (ImageButton) findViewById(R.id.imgBtndelete2);
+        ImageButton createCyclistBtn = (ImageButton) findViewById(R.id.imgbtnAdd);
+        ImageButton deleteCyclistBtn = (ImageButton) findViewById(R.id.imgBtnDelete);
         ImageButton updateCyclistBtn = (ImageButton) findViewById(R.id.imgBtnUpdate);
-        ImageButton viewAllListBtn   = (ImageButton) findViewById(R.id.imgBtnList);
+        ImageButton viewAllListBtn   = (ImageButton) findViewById(R.id.imageView);
 
 //Main Page: different buttons
 
