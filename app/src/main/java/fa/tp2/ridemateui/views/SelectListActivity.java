@@ -8,17 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import fa.tp2.ridemateui.MainActivity;
 import fa.tp2.ridemateui.R;
-import fa.tp2.ridemateui.model.Cyclist;
 import fa.tp2.ridemateui.repositories.rest.RestCyclistAPI;
-import fa.tp2.ridemateui.views.Adapters.CyclistAdapter;
 
 /**
  * Created by User on 2015/09/24.
@@ -31,15 +25,15 @@ public class SelectListActivity extends Activity {
     Button btnDelete;
     Button btnUpdate;
     Context c;
-    private static final int request_code = 5;
+  //  private static final int request_code = 5;
 
 
 
     private RestCyclistAPI restCyclistAPI = new RestCyclistAPI();
-    List<Cyclist> cyclistList = new ArrayList<Cyclist>();
+    /*List<Cyclist> cyclistList = new ArrayList<Cyclist>();
     ListView listView;
     CyclistAdapter adapter ;
-    Cyclist[] cyclist;
+    Cyclist[] cyclist;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +73,7 @@ public class SelectListActivity extends Activity {
 
 
 
-        listView = (ListView) findViewById(R.id.listView);
+       // listView = (ListView) findViewById(R.id.listView);
        // new GetCyclistsTask().execute();
 
      //assign the EditText values to variable names
@@ -99,15 +93,13 @@ public class SelectListActivity extends Activity {
 
                 if (editName.length() == 0 || editSurname.length() == 0 || editAge.length() == 0) {
                     Toast.makeText(c, "Please fill in name, surname and age", Toast.LENGTH_SHORT).show();
-
                 }
+
             }
 
         });
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View v) {
                 System.out.println("Submit button hit on SelectList");//test
@@ -116,6 +108,9 @@ public class SelectListActivity extends Activity {
                     Toast.makeText(c, "Please select a cyclist", Toast.LENGTH_SHORT).show();
 
                 }
+                 Intent updatePage = new Intent(SelectListActivity.this, UpdateCyclistActivity.class);
+                    startActivity(updatePage);
+
             }
 
         });
@@ -138,7 +133,7 @@ public class SelectListActivity extends Activity {
 
         //how to take name, surname and age to UpdateCyclistActivity
 
-         protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+     /*    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if ((requestCode == request_code) && (resultCode == RESULT_OK)) {
 
 				String returnString = data.getExtras().getString("returnData");
@@ -167,7 +162,7 @@ public class SelectListActivity extends Activity {
              updateCycDetails.putExtra("qString", mySurname );
              updateCycDetails.putExtra("qString", myAge );
     	startActivityForResult(updateCycDetails, request_code);
-    }
+    }*/
 
 
 
