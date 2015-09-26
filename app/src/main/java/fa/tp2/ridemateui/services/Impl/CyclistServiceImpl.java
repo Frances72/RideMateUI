@@ -15,7 +15,7 @@ public class CyclistServiceImpl implements CyclistService {
     final RestAPI<Cyclist,Long> rest = new RestCyclistAPI();
     @Override
     public Cyclist findById(Long id) {
-        return rest.get(id);
+        return rest.getAll(id);
     }
 
     @Override
