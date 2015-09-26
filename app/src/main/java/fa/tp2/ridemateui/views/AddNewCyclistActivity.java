@@ -63,7 +63,6 @@ public class AddNewCyclistActivity extends Activity {
             }
         });
 
-
         updateCyclistBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -85,7 +85,7 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="66dp"
-                android:id="@+id/imgbtnAdd"
+                android:id="@+id/imgBtnAdd"
                 android:src="@drawable/add"
                 android:background="#00000000"
                 android:clickable="true"

@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         //initailizing buttons
-        ImageButton createCyclistBtn = (ImageButton) findViewById(R.id.imgbtnAdd);
+        ImageButton createCyclistBtn = (ImageButton) findViewById(R.id.imgBtnAdd);
         ImageButton deleteCyclistBtn = (ImageButton) findViewById(R.id.imgBtnDelete);
         ImageButton updateCyclistBtn = (ImageButton) findViewById(R.id.imgBtnUpdate);
         ImageButton viewAllListBtn   = (ImageButton) findViewById(R.id.imageView);
