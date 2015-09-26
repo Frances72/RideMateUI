@@ -2,6 +2,7 @@ package fa.tp2.ridemateui.views;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -29,12 +30,17 @@ public class SelectListActivity extends Activity {
     Button btnDelete;
     Button btnUpdate;
     Context c;
+    private static final int request_code = 5;
 
     private RestCyclistAPI restCyclistAPI = new RestCyclistAPI();
     List<Cyclist> cyclistList = new ArrayList<Cyclist>();
     ListView listView;
     CyclistAdapter adapter ;
     Cyclist[] cyclist;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,19 +53,20 @@ public class SelectListActivity extends Activity {
 
         c = this;
 
+//assign the EditText values to variable names
+        editName    = (EditText) findViewById(R.id.editName);
+        editSurname = (EditText) findViewById(R.id.editSurname);
+        editAge     = (EditText) findViewById(R.id.editAge);
+        btnDelete   = (Button) findViewById(R.id.btnDelete);
+        btnUpdate   = (Button) findViewById(R.id.btnUpdate);
 
-        editName        = (EditText) findViewById(R.id.editName);
-        editSurname     = (EditText) findViewById(R.id.editSurname);
-        editAge         = (EditText) findViewById(R.id.editAge);
-        btnDelete       = (Button) findViewById(R.id.btnDelete);
-        btnUpdate       = (Button) findViewById(R.id.btnUpdate);
-
+        //set the onClickListener for the delete and Submit Buttons
         btnDelete.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
             public void onClick(View v) {
-                System.out.println("Submit button hit on DeleteCyclist");//test
+                System.out.println("Submit button hit on selectlist page");//test
 
                 String firstname = editName.getText() + "";
                 String lastname = editSurname.getText() + "";
@@ -118,5 +125,49 @@ public class SelectListActivity extends Activity {
 
         }
 
+
+
+
+
+        //how to take name, surname and age to UpdateCyclistActivity
+
+         protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if ((requestCode == request_code) && (resultCode == RESULT_OK)) {
+
+				editName        = (EditText) findViewById(R.id.editName);
+                editSurname     = (EditText) findViewById(R.id.editSurname);
+                editAge         = (EditText) findViewById(R.id.editAge);
+
+				String returnString = data.getExtras().getString("returnData");
+
+				editName.setText(returnString);
+				editSurname.setText(returnString);
+				editAge.setText(returnString);
+		}
+	}
+
+        //move to the UpdateCyclistActivity page
+
+         public void onClick(View view) {
+
+    	Intent updateCycDetails = new Intent(SelectListActivity.this, UpdateCyclistActivity.class);
+
+    	      final EditText editName        = (EditText) findViewById(R.id.editName);
+              final EditText editSurname     = (EditText) findViewById(R.id.editSurname);
+              final EditText editAge         = (EditText) findViewById(R.id.editAge);
+
+    	String myName    = editName.getText().toString();
+    	String mySurname = editSurname.getText().toString();
+    	String myAge     = editAge.getText().toString();
+
+             updateCycDetails.putExtra("qString", myName );
+             updateCycDetails.putExtra("qString", mySurname );
+             updateCycDetails.putExtra("qString", myAge );
+    	startActivityForResult(updateCycDetails, request_code);
     }
+
+
+
+    }
+
 }

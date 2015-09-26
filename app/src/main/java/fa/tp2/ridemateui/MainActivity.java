@@ -16,8 +16,7 @@ import fa.tp2.ridemateui.model.Cyclist;
 import fa.tp2.ridemateui.repositories.rest.RestCyclistAPI;
 import fa.tp2.ridemateui.views.Adapters.CyclistAdapter;
 import fa.tp2.ridemateui.views.AddNewCyclistActivity;
-import fa.tp2.ridemateui.views.DeleteCyclistActivity;
-import fa.tp2.ridemateui.views.UpdateCyclistActivity;
+import fa.tp2.ridemateui.views.SelectListActivity;
 import fa.tp2.ridemateui.views.ViewAll;
 
 public class MainActivity extends Activity {
@@ -32,10 +31,12 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //initailizing buttons
         ImageButton createCyclistBtn = (ImageButton) findViewById(R.id.imgbtnAddNew);
         ImageButton deleteCyclistBtn = (ImageButton) findViewById(R.id.imgBtndelete2);
         ImageButton updateCyclistBtn = (ImageButton) findViewById(R.id.imgBtnUpdate);
-        ImageButton viewAllListBtn = (ImageButton) findViewById(R.id.imgBtnList);
+        ImageButton viewAllListBtn   = (ImageButton) findViewById(R.id.imgBtnList);
 
 //Main Page: different buttons
 
@@ -50,7 +51,7 @@ public class MainActivity extends Activity {
         deleteCyclistBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent deleteCyclist = new Intent(MainActivity.this, DeleteCyclistActivity.class);
+                Intent deleteCyclist = new Intent(MainActivity.this, SelectListActivity.class);
                 startActivity(deleteCyclist);
             }
         });
@@ -59,7 +60,7 @@ public class MainActivity extends Activity {
         updateCyclistBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent updateCyclist = new Intent(MainActivity.this, UpdateCyclistActivity.class);
+                Intent updateCyclist = new Intent(MainActivity.this, SelectListActivity.class);
                 startActivity(updateCyclist);
             }
         });

@@ -55,7 +55,7 @@ public class ViewAll extends Activity {
         deleteCyclistBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent deleteCyclist = new Intent(ViewAll.this, DeleteCyclistActivity.class);
+                Intent deleteCyclist = new Intent(ViewAll.this, SelectListActivity.class);
                 startActivity(deleteCyclist);
             }
         });
@@ -64,7 +64,7 @@ public class ViewAll extends Activity {
         updateCyclistBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent updateCyclist = new Intent(ViewAll.this, UpdateCyclistActivity.class);
+                Intent updateCyclist = new Intent(ViewAll.this, SelectListActivity.class);
                 startActivity(updateCyclist);
             }
         });

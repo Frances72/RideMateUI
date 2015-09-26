@@ -32,6 +32,8 @@ public class AddNewCyclistActivity extends Activity {
       //  getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
       //  getActionBar().hide();
 
+
+
         c = this;
 
         setContentView(R.layout.addnewcyclist);

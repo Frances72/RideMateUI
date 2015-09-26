@@ -45,6 +45,18 @@ public class UpdateCyclistActivity extends Activity {
         ImageButton updateCyclistBtn = (ImageButton) findViewById(R.id.imgBtnUpdate);
         ImageButton goHomeBtn        = (ImageButton) findViewById(R.id.imgBtnHome);
 
+
+/*Pull the name, surname and age selected in the ListView from the SelectListActivity:
+Bundle extras = getIntent().getExtras();
+
+If (extras != null) {
+    String myString = extras.getString("myString");
+    int myInt = extras.getInt("myInt");
+}
+*
+*
+* */
+
 //Add Button Handlers
 
         createCyclistBtn.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +70,7 @@ public class UpdateCyclistActivity extends Activity {
         deleteCyclistBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent deleteCyclist = new Intent(UpdateCyclistActivity.this, DeleteCyclistActivity.class);
+                Intent deleteCyclist = new Intent(UpdateCyclistActivity.this, SelectListActivity.class);
                 startActivity(deleteCyclist);
             }
         });

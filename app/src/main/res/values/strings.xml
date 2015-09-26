@@ -7,4 +7,6 @@
     <string name="title_submit_update" />
     <string name="title_deletecyclist" />
     <string name="title_addnewcyclist" />
+    <string name="title_selectlist">Select_List_Cyclist</string>
+    <string name="title_viewall">view_list_cyclists</string>
 </resources>
